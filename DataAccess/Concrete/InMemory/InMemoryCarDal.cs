@@ -13,11 +13,11 @@ namespace DataAccess.Concrete.InMemory
         public InMemoryCarDal()
         {
             _cars = new List<Car> {
-                new Car { Id = 1, BrandId = 1, ColorId = 3, DailyPrice = 500, Description = "Audi 1", ModelYear = 2019 },
-                new Car { Id = 2, BrandId = 1, ColorId = 1, DailyPrice = 300, Description = "Audi 2", ModelYear = 2015 },
-                new Car { Id = 3, BrandId = 2, ColorId = 1, DailyPrice = 750, Description = "Mercedes 1", ModelYear = 2020 },
-                new Car { Id = 4, BrandId = 3, ColorId = 5, DailyPrice = 200, Description = "Volvo", ModelYear = 1999 },
-                new Car { Id = 5, BrandId = 2, ColorId = 5, DailyPrice = 450, Description = "Mercedes 2", ModelYear = 2018 },
+                new Car { Id = 1, BrandId = 1, ColorId = 3, CarName="Audi 2019", DailyPrice = 500, Description = "Konforlu", ModelYear = 2019 },
+                new Car { Id = 2, BrandId = 1, ColorId = 1, CarName="Audi 2015", DailyPrice = 300, Description = "Sahibinden sıfır", ModelYear = 2015 },
+                new Car { Id = 3, BrandId = 2, ColorId = 1, CarName="Mercedes 2020", DailyPrice = 750, Description = "Full paket", ModelYear = 2020 },
+                new Car { Id = 4, BrandId = 3, ColorId = 5, CarName="Volvo 1999", DailyPrice = 200, Description = "Dayanıklı", ModelYear = 1999 },
+                new Car { Id = 5, BrandId = 2, ColorId = 5, CarName="Mercedes 2018", DailyPrice = 450, Description = "Güçlü", ModelYear = 2018 },
             };
         }
         public List<Car> GetAll()
@@ -45,6 +45,7 @@ namespace DataAccess.Concrete.InMemory
             Car carToUpdate = _cars.SingleOrDefault(p => p.Id == car.Id);
             carToUpdate.BrandId = car.BrandId;
             carToUpdate.ColorId = car.ColorId;
+            carToUpdate.CarName = car.CarName;
             carToUpdate.DailyPrice = car.DailyPrice;
             carToUpdate.Description = car.Description;
             carToUpdate.ModelYear = car.ModelYear;

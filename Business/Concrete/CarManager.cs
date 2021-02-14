@@ -25,7 +25,23 @@ namespace Business.Concrete
         }
         public void Add(Car car)
         {
-            _carDal.Add(car);
+            if (car.CarName.Length >= 2 || car.DailyPrice <= 0)
+            {
+                _carDal.Add(car);
+            }
+            else
+            {
+                if (car.CarName.Length >= 2)
+                {
+                    Console.WriteLine("Araba adı min 2 karakter olmalıdır, kayıt başarısız.");
+                }
+                else
+                {
+                    Console.WriteLine("Arabanın günlük fiyatı 0'dan büyük olmalıdır, kayıt başarısız.");
+                }
+                
+            }
+            
         }
 
         public void Delete(Car car)
