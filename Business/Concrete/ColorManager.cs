@@ -26,19 +26,19 @@ namespace Business.Concrete
             _colorDal.Delete(color);
         }
 
+        public void Update(Color color)
+        {
+            _colorDal.Update(color);
+        }
+
         public List<Color> GetAll()
         {
             return _colorDal.GetAll();
         }
 
-        public List<Color> GetColorById(int id)
+        public Color Get(int id)
         {
-            return _colorDal.GetColorById(id);
-        }
-
-        public void Update(Color color)
-        {
-            _colorDal.Update(color);
+            return _colorDal.Get(p => p.Id == id);
         }
     }
 }
